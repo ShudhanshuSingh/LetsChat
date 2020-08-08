@@ -8,9 +8,10 @@ import firebase from "firebase";
 import Picker, { SKIN_TONE_MEDIUM_DARK } from "emoji-picker-react";
 import "./emoji.css";
 import FlipMove from "react-flip-move";
+import SelectInput from "@material-ui/core/Select/SelectInput";
 function App() {
   const [input, setInput] = React.useState("");
-  const [messages, setMessages] = React.useState([{}]);
+  const [messages, setMessages] = React.useState([{id:2,message:{message:"Hello", username:"SHudh"}}]);
   const [username, setUsername] = React.useState("");
   const [chosenEmoji, setChosenEmoji] = React.useState(null);
   const sendMessage = (event) => {
@@ -34,7 +35,7 @@ function App() {
 
   const nameList = [
     "Willard",
-    "Sadie",
+    "Sadie", 
     "Ashley",
     "Nelson",
     "Hadden",
@@ -44,20 +45,22 @@ function App() {
     "Balasubramanian",
   ];
   React.useEffect(() => {
-    var name = prompt("Hey! Please enter your username...");
+    var name = prompt("Hey! Please enter your username...else we will give you a name of our choice");
     if (name === "") {
       setUsername(nameList[Math.floor(Math.random() * nameList.length)]);
     } else {
       setUsername(name);
     }
     console.log(name);
+
     // setUsername(prompt("Hey! Please enter your username..."));
   }, []);
 
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject);
-    setInput(emojiObject.emoji);
+    // setInput(input + emojiObject.emoji);
     console.log(emojiObject.emoji);
+    setInput(input + emojiObject.emoji);
   };
 
   return (

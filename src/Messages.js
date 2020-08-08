@@ -3,7 +3,8 @@ import { Card, CardContent,Typography} from '@material-ui/core';
 import  './messages.css';
 
 const Messages = forwardRef(({username, message},ref)=> {
-    
+    console.log(username)
+    console.log(message)
     const isUser = username === message.username;
     // const isUser= true;
   return (
