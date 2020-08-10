@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Source+Sans+Pro&display=swap');
+
 .App {
   text-align: center;
+  overflow: auto;
 }
 
 .App-logo {
@@ -35,4 +38,55 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.app__form{
+  position: fixed;
+  padding:10px;
+  margin: 10px;
+  margin-bottom: 15px;
+  bottom: 0rem;
+  z-index: 1;
+  width: 96%;
+  background-color: #DADADA;
+  border-radius: 10px;
+}
+
+.app__FormControl{
+  display: flex !important;
+  flex-direction: row !important;
+  font-family: 'Poppins', sans-serif !important;
+
+}
+.app__input{
+  flex:1 !important;
+}
+.app__iconButton{
+  flex:0 !important;
+}
+
+.messages{
+  height: 30rem !important;
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.emojiPicker{
+  margin-left: 3px !important;
+}
+.emojiContainer{
+  /*  */
+  position: absolute;
+  bottom: 6rem;
+  z-index: 2;
+  display: none;  
+}
+
+.sendButtonText{
+  font-size: smaller;
+  margin-right: 3px !important;
+}
+.appToolBar{
+  display: flex;
+  justify-content: space-between;
 }
